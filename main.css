@@ -4180,3 +4180,42 @@ input, select, textarea {
 }
 
 /* Hobbies Map */
+.land {
+	fill: #e4e4e4;
+	fill-opacity: 1;
+	stroke: #fff;
+}
+.land.visited {
+	fill: #272727;
+	cursor: pointer;
+}
+	.visited:hover {
+		fill: #3d3d3d;
+		cursor: pointer;
+	}
+.land.lived {
+	fill: #d94343;
+	cursor: pointer;
+}
+	.lived:hover {
+		fill: #fa4d4d;
+		cursor: pointer;
+	}
+.map__text--visited {
+	color: #272727;
+	font-weight : bold;
+}
+.map__text--lived {
+	color: #d94343;
+	font-weight: bold;
+}		
+.hovertext {
+	position: sticky;
+	background-color: black;
+	color: #fff;
+	text-align: center;
+	border: 1px dotted #fff;
+	border-radius: 6px;
+	padding: 5px;
+	margin-left: 2px;
+}	
