@@ -263,7 +263,6 @@
 					$modalImg = $modal.find('img'),
 					$modalP = $modal.find('p'),
 					href = $a.attr('href');
-					caption = $a.attr('title');
 
 				// Not an image? Bail.
 					if (!href.match(/\.(jpg|JPG|gif|png|PNG|mp4)$/))
@@ -281,10 +280,7 @@
 					$modal[0]._locked = true;
 
 				// Set src.
-					$modalImg.attr('src', href);
-
-				// Set caption	
-					$modalP.append(caption);					
+					$modalImg.attr('src', href);					
 
 				// Set visible.
 					$modal.addClass('visible');
@@ -362,7 +358,7 @@
 					event.stopPropagation();
 
 			})
-			.prepend('<div class="modal" tabIndex="-1"><div class="inner"><img src="" /><p id="caption"></p></div></div>')
+			.prepend('<div class="modal" tabIndex="-1"><div class="inner"><img src="" /></div></div>')
 				.find('img')
 					.on('load', function(event) {
 
