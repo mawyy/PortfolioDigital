@@ -1,108 +1,10 @@
+/*
+	Paradigm Shift by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+
 (function($) {
-
-	// navigation
-	var OnePageNav = function() {
-		var navToggler = $('.js-site-nav-toggle');
-		/*$("#ftco-navbar ul li a[href^='#']").on('click', function(e) {
-			e.preventDefault();
-			var hash = this.hash;
-				
-			$('html, body').animate({
-				scrollTop: $(hash).offset().top
-			}, 700, 'easeInOutExpo', function(){
-				window.location.hash = hash;
-			});
-		});*/
-		$("#ftco-navbar ul li a[href^='#']").on('click', function(e){
-			if ( navToggler.is(':visible') ) {
-				navToggler.click();
-			}
-		});
-	
-		// $('body').on('activate.bs.scrollspy', function () {
-		//   console.log('nice');
-		// })
-	};
-	OnePageNav();
-
-	$(window).scroll(function() {
-	
-		var $this = $(this),
-			st = $this.scrollTop(),
-			navbar = $('.site-header');
-	
-		if (st > 150) {
-			if ( !navbar.hasClass('scrolled') ) {
-				navbar.addClass('scrolled');  
-			}
-		} 
-		if (st < 150) {
-			if ( navbar.hasClass('scrolled') ) {
-				navbar.removeClass('scrolled sleep');
-			}
-		} 
-		if ( st > 350 ) {
-			if ( !navbar.hasClass('awake') ) {
-				navbar.addClass('awake'); 
-			}
-		}
-		if ( st < 350 ) {
-			if ( navbar.hasClass('awake') ) {
-				navbar.removeClass('awake');
-				navbar.addClass('sleep');
-			}
-		}
-	
-	}); 
-	
-	
-	$('.js-site-nav-toggle').on('click', function(e) {
-	
-		var $this = $(this);
-		e.preventDefault();
-	
-	 
-	
-		if ( $('body').hasClass('menu-open') ) {
-		  	$this.removeClass('active');
-			$('.site-menu .site-menu-inner > ul > li').each(function(i) {
-	
-				var that = $(this);
-				setTimeout(function() {
-					that.removeClass('is-show');
-				}, i * 100);
-	
-			// $(this).removeClass('is-show');
-			});
-		  
-			setTimeout(function() {
-				// $('.site-menu').fadeOut(400);
-				$('.site-menu').removeClass('site-menu-show');
-			}, 800);
-		
-			$('body').removeClass('menu-open');
-		} else {
-	
-			// $('.site-menu').fadeIn(400);
-			$('.site-menu').addClass('site-menu-show');
-		
-			$this.addClass('active');
-			$('body').addClass('menu-open');
-		
-			setTimeout(function() {
-				$('.site-menu .site-menu-inner > ul > li').each(function(i) {
-				var that = $(this);
-				setTimeout(function() {
-					that.addClass('is-show');
-				}, i * 100);
-		
-				});
-			}, 500);
-		  
-		}
-	
-	});
-	
 
 	var	$window = $(window),
 		$body = $('body');
@@ -123,22 +25,6 @@
 			window.setTimeout(function() {
 				$body.removeClass('is-preload');
 			}, 100);
-		});
-
-		$window.scroll(function() {
-			var s = $window.scrollTop();
-			if (s > 250) {
-				$('.scrollup').fadeIn();
-			} else {
-				$('.scrollup').fadeOut();
-			}
-			$('.scrollup').click(function () {
-				$("html, body").animate({ scrollTop: 0 }, 500);
-				return false;
-			});
-			$("html, body").bind("scroll mousedown DOMMouseScroll mousewheel keyup", function(){
-				$('html, body').stop();
-			});
 		});
 
 	// Hack: Enable IE workarounds.
@@ -196,14 +82,6 @@
 
 		}
 
-
-		$(".visited").hover(function() {
-			$(".tooltiptext").text($(this).attr('title'));
-		});
-
-		
-
-
 	// Gallery.
 		$('.gallery')
 			.on('click', 'a', function(event) {
@@ -212,12 +90,10 @@
 					$gallery = $a.parents('.gallery'),
 					$modal = $gallery.children('.modal'),
 					$modalImg = $modal.find('img'),
-					$modalP = $modal.find('p'),
 					href = $a.attr('href');
-					caption = $a.attr('title');
 
 				// Not an image? Bail.
-					if (!href.match(/\.(jpg|JPG|gif|png|PNG|mp4)$/))
+					if (!href.match(/\.(jpg|gif|png|mp4)$/))
 						return;
 
 				// Prevent default.
@@ -233,9 +109,6 @@
 
 				// Set src.
 					$modalImg.attr('src', href);
-
-				// Set caption	
-					$modalP.append(caption);					
 
 				// Set visible.
 					$modal.addClass('visible');
@@ -256,7 +129,6 @@
 
 				var $modal = $(this),
 					$modalImg = $modal.find('img');
-					$modalP = $modal.find('p');
 
 				// Locked? Bail.
 					if ($modal[0]._locked)
@@ -285,7 +157,7 @@
 						setTimeout(function() {
 
 							// Clear src.
-								$modalImg.attr('src', '');								
+								$modalImg.attr('src', '');
 
 							// Unlock.
 								$modal[0]._locked = false;
@@ -313,7 +185,7 @@
 					event.stopPropagation();
 
 			})
-			.prepend('<div class="modal" tabIndex="-1"><div class="inner"><img src="" /><p id="caption"></p></div></div>')
+			.prepend('<div class="modal" tabIndex="-1"><div class="inner"><img src="" /></div></div>')
 				.find('img')
 					.on('load', function(event) {
 
@@ -332,5 +204,5 @@
 						}, 275);
 
 					});
-	
+
 })(jQuery);
