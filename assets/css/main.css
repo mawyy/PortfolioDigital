@@ -3141,6 +3141,11 @@ input, select, textarea {
 				height: 25rem;
 			}
 
+			.gallery a.demi-landscape img {
+				height: 28vw;
+				width: 100%;
+			}
+
 			.gallery a.portrait img {
 				height: 25rem;
 			}
@@ -3647,12 +3652,9 @@ input, select, textarea {
 			h3, p, footer p, b, a {
 				color: black;
 			}
-
+			/* texte Home */
 			.intro-text {
 				color: #cfcccc !important;
-			}
-			.dropdown__toggle {
-
 			}
 
 			.legend, .dropdown__toggle {
@@ -3662,10 +3664,10 @@ input, select, textarea {
 			.illu-legend {
 				padding: 0;
 			}
+			/* menu burger */
 			.site-nav-toggle i, .site-nav-toggle i:before, .site-nav-toggle i:after {
 				background: #929292;
 			}
-
 			.site-nav-toggle i {
 				position: relative;
 				display: -moz-inline-stack;
@@ -3680,8 +3682,7 @@ input, select, textarea {
 				-webkit-transition: all .2s ease-out;
 				-o-transition: all .2s ease-out;
 				transition: all .2s ease-out;
-			}
-			
+			}			
 			.site-nav-toggle i:before, .site-nav-toggle i:after {
 				content: '';
 				width: 20px;
@@ -3694,12 +3695,18 @@ input, select, textarea {
 			}
 			.site-nav-toggle i:before {
 				top: -6px;
-			}
-			
+			}			
 			.site-nav-toggle i:after {
 				bottom: -6px;
 			}
-		
+			/* zoom image fond blanc */
+			.gallery .modal .inner img {
+				box-shadow: 0 1rem 3rem 0 rgba(0, 0, 0, 0.35);
+				display: block;
+				max-width: 70vw;
+				margin: auto;
+			}
+			
 			#wrapper > section.intro > header > * {
 				width: 100%;
 			}
